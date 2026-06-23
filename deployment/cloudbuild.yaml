@@ -1,0 +1,31 @@
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - -f
+      - deployment/Dockerfile.service
+      - --build-arg
+      - SERVICE_MODULE=cloud_run_services.ai_gateway.main
+      - -t
+      - ${_REGION}-docker.pkg.dev/${PROJECT_ID}/enterprise-ai/ai-gateway:${SHORT_SHA}
+      - .
+
+  - name: gcr.io/cloud-builders/docker
+    args: ["push", "${_REGION}-docker.pkg.dev/${PROJECT_ID}/enterprise-ai/ai-gateway:${SHORT_SHA}"]
+
+  - name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    entrypoint: gcloud
+    args:
+      - run
+      - deploy
+      - ai-gateway
+      - --image=${_REGION}-docker.pkg.dev/${PROJECT_ID}/enterprise-ai/ai-gateway:${SHORT_SHA}
+      - --region=${_REGION}
+      - --platform=managed
+      - --allow-unauthenticated
+
+substitutions:
+  _REGION: us-central1
+
+options:
+  logging: CLOUD_LOGGING_ONLY

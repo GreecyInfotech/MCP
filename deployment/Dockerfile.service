@@ -1,0 +1,15 @@
+FROM python:3.11-slim
+WORKDIR /app
+RUN apt-get update && apt-get install -y --no-install-recommends libpq-dev build-essential \
+    && rm -rf /var/lib/apt/lists/*
+COPY pyproject.toml .
+COPY eai_platform/ eai_platform/
+COPY vertex_ai/ vertex_ai/
+COPY data_layer/ data_layer/
+COPY cloud_run_services/ cloud_run_services/
+RUN pip install --no-cache-dir .
+ARG SERVICE_MODULE=cloud_run_services.ai_gateway.main
+ENV SERVICE_MODULE=${SERVICE_MODULE}
+ENV PYTHONPATH=/app
+EXPOSE 8080
+CMD python -c "import os,uvicorn; uvicorn.run(os.environ['SERVICE_MODULE']+':app', host='0.0.0.0', port=int(os.environ.get('PORT','8080')))"

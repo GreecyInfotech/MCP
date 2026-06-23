@@ -1,0 +1,69 @@
+{
+  "mcpServers": {
+    "github": {
+      "command": "mcp-github",
+      "env": {
+        "GITHUB_TOKEN": "${GITHUB_TOKEN}",
+        "GITHUB_ORG": "${GITHUB_ORG}"
+      }
+    },
+    "jira": {
+      "command": "mcp-jira",
+      "env": {
+        "JIRA_URL": "${JIRA_URL}",
+        "JIRA_EMAIL": "${JIRA_EMAIL}",
+        "JIRA_API_TOKEN": "${JIRA_API_TOKEN}"
+      }
+    },
+    "confluence": {
+      "command": "mcp-confluence",
+      "env": {
+        "CONFLUENCE_URL": "${CONFLUENCE_URL}",
+        "CONFLUENCE_EMAIL": "${CONFLUENCE_EMAIL}",
+        "CONFLUENCE_API_TOKEN": "${CONFLUENCE_API_TOKEN}"
+      }
+    },
+    "postgresql": {
+      "command": "mcp-postgresql",
+      "env": {
+        "DATABASE_URL": "${DATABASE_URL}"
+      }
+    },
+    "mongodb": {
+      "command": "mcp-mongodb",
+      "env": {
+        "MONGODB_URI": "${MONGODB_URI}",
+        "MONGODB_DATABASE": "${MONGODB_DATABASE}"
+      }
+    },
+    "kubernetes": {
+      "command": "mcp-kubernetes",
+      "env": {
+        "KUBECONFIG_PATH": "${KUBECONFIG_PATH}",
+        "KUBERNETES_NAMESPACE": "${KUBERNETES_NAMESPACE}"
+      }
+    },
+    "aws": {
+      "command": "mcp-aws",
+      "env": {
+        "AWS_REGION": "${AWS_REGION}",
+        "AWS_ACCESS_KEY_ID": "${AWS_ACCESS_KEY_ID}",
+        "AWS_SECRET_ACCESS_KEY": "${AWS_SECRET_ACCESS_KEY}"
+      }
+    },
+    "slack": {
+      "command": "mcp-slack",
+      "env": {
+        "SLACK_BOT_TOKEN": "${SLACK_BOT_TOKEN}",
+        "SLACK_TEAM_ID": "${SLACK_TEAM_ID}"
+      }
+    },
+    "browser": {
+      "command": "mcp-browser",
+      "env": {
+        "BROWSER_HEADLESS": "true",
+        "BROWSER_TIMEOUT_MS": "30000"
+      }
+    }
+  }
+}

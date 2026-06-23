@@ -1,0 +1,129 @@
+.agent-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.agent-header h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.agent-header p {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.suggestion-chip {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  padding: 0.375rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  transition: all 0.15s;
+}
+
+.suggestion-chip:hover {
+  border-color: var(--accent);
+  color: var(--text-primary);
+}
+
+.query-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.query-form textarea {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+  padding: 0.75rem 1rem;
+  resize: vertical;
+  font-size: 0.875rem;
+}
+
+.query-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.query-form button {
+  align-self: flex-end;
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.625rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: background 0.15s;
+}
+
+.query-form button:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.query-form button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.error-box {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid var(--danger);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  color: var(--danger);
+  font-size: 0.875rem;
+}
+
+.response-box {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+}
+
+.response-box h3 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.answer {
+  white-space: pre-wrap;
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+.response-box details {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+}
+
+.response-box summary {
+  cursor: pointer;
+  color: var(--text-secondary);
+}
+
+.response-box ul {
+  margin-top: 0.5rem;
+  padding-left: 1.25rem;
+}
+
+.response-box code {
+  font-size: 0.75rem;
+  word-break: break-all;
+}
