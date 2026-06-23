@@ -1,4 +1,6 @@
-# Enterprise AI Platform
+# MCP — Enterprise AI Platform
+
+MCP AI Projects by [GreecyInfotech](https://github.com/GreecyInfotech/MCP).
 
 GCP-native enterprise AI platform built on **Cloud Run**, **Vertex AI**, and Google data services.
 
